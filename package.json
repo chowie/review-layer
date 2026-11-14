@@ -1,0 +1,36 @@
+{
+  "name": "review-layer",
+  "version": "0.1.0",
+  "description": "Let reviewers comment on any part of a website and turn their comments into a to-do list with deep links back to the content.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "exports": {
+    "./server": "./src/server/handler.js",
+    "./stores/memory": "./src/server/stores/memory.js",
+    "./stores/netlify-blobs": "./src/server/stores/netlify-blobs.js",
+    "./anchor": "./src/anchor.js",
+    "./model": "./src/model.js",
+    "./merge": "./src/merge.js"
+  },
+  "bin": {
+    "review-layer": "./bin/review-layer.js"
+  },
+  "files": [
+    "src",
+    "bin"
+  ],
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  },
+  "peerDependencies": {
+    "@netlify/blobs": ">=8"
+  },
+  "peerDependenciesMeta": {
+    "@netlify/blobs": {
+      "optional": true
+    }
+  }
+}
